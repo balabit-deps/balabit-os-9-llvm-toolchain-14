@@ -1,0 +1,641 @@
+The system is: Linux - 5.4.0-4-amd64 - x86_64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/clang++ 
+Build flags: -g;-O2;-fdebug-prefix-map=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project=.;-fstack-protector-strong;-Wformat;-Werror=format-security;-Wdate-time;-D_FORTIFY_SOURCE=2
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is Clang, found in "/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/3.18.4/CompilerIdCXX/a.out"
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/clang 
+Build flags: -g;-O2;-fdebug-prefix-map=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project=.;-fstack-protector-strong;-Wformat;-Werror=format-security
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Clang, found in "/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/3.18.4/CompilerIdC/a.out"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_18cec && [1/2] Building CXX object CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o
+Debian clang version 14.0.0 (git@github.com:llvm/llvm-project.git 210d72e9d6b4a8e7633921d0bd7186fd3c7a2c8c)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Candidate multilib: x32;@mx32
+Selected multilib: .;@m64
+ (in-process)
+ "/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/clang-14" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp -resource-dir /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D _FORTIFY_SOURCE=2 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/backward -internal-isystem /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -Wformat -Wdate-time -fdeprecated-macro -fdebug-compilation-dir=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp -fdebug-prefix-map=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project=. -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.18/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10
+ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10
+ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/backward
+ /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_18cec
+Debian clang version 14.0.0 (git@github.com:llvm/llvm-project.git 210d72e9d6b4a8e7633921d0bd7186fd3c7a2c8c)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Candidate multilib: x32;@mx32
+Selected multilib: .;@m64
+ "/usr/bin/ld" --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_18cec /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtend.o /usr/lib/x86_64-linux-gnu/crtn.o
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/backward]
+    add: [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10] ==> [/usr/include/c++/10]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10] ==> [/usr/include/x86_64-linux-gnu/c++/10]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/backward] ==> [/usr/include/c++/10/backward]
+  collapse include dir [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include] ==> [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/include/c++/10;/usr/include/x86_64-linux-gnu/c++/10;/usr/include/c++/10/backward;/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_18cec && [1/2] Building CXX object CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [Debian clang version 14.0.0 (git@github.com:llvm/llvm-project.git 210d72e9d6b4a8e7633921d0bd7186fd3c7a2c8c)]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Candidate multilib: x32]
+  ignore line: [@mx32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [ (in-process)]
+  ignore line: [ "/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/clang-14" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp -resource-dir /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D _FORTIFY_SOURCE=2 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/backward -internal-isystem /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -Wformat -Wdate-time -fdeprecated-macro -fdebug-compilation-dir=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp -fdebug-prefix-map=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project=. -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.18/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/backward]
+  ignore line: [ /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [[2/2] Linking CXX executable cmTC_18cec]
+  ignore line: [Debian clang version 14.0.0 (git@github.com:llvm/llvm-project.git 210d72e9d6b4a8e7633921d0bd7186fd3c7a2c8c)]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Candidate multilib: x32]
+  ignore line: [@mx32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  link line: [ "/usr/bin/ld" --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_18cec /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtend.o /usr/lib/x86_64-linux-gnu/crtn.o]
+    arg [/usr/bin/ld] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_18cec] ==> ignore
+    arg [/usr/lib/x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib] ==> dir [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTC_18cec.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtend.o] ==> ignore
+    arg [/usr/lib/x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10] ==> [/usr/lib/gcc/x86_64-linux-gnu/10]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib] ==> [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib]
+  collapse library dir [/lib] ==> [/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/10;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib;/lib;/usr/lib]
+  implicit fwks: []
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_6b1f3 && [1/2] Building C object CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o
+Debian clang version 14.0.0 (git@github.com:llvm/llvm-project.git 210d72e9d6b4a8e7633921d0bd7186fd3c7a2c8c)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Candidate multilib: x32;@mx32
+Selected multilib: .;@m64
+ (in-process)
+ "/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/clang-14" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp -resource-dir /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -Wformat -fdebug-compilation-dir=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp -fdebug-prefix-map=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project=. -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.18/Modules/CMakeCCompilerABI.c
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking C executable cmTC_6b1f3
+Debian clang version 14.0.0 (git@github.com:llvm/llvm-project.git 210d72e9d6b4a8e7633921d0bd7186fd3c7a2c8c)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10
+Candidate multilib: .;@m64
+Candidate multilib: 32;@m32
+Candidate multilib: x32;@mx32
+Selected multilib: .;@m64
+ "/usr/bin/ld" --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6b1f3 /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/10/crtend.o /usr/lib/x86_64-linux-gnu/crtn.o
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include] ==> [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_6b1f3 && [1/2] Building C object CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o]
+  ignore line: [Debian clang version 14.0.0 (git@github.com:llvm/llvm-project.git 210d72e9d6b4a8e7633921d0bd7186fd3c7a2c8c)]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Candidate multilib: x32]
+  ignore line: [@mx32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [ (in-process)]
+  ignore line: [ "/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/clang-14" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp -resource-dir /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -Wformat -fdebug-compilation-dir=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp -fdebug-prefix-map=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project=. -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -vectorize-loops -vectorize-slp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.18/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [[2/2] Linking C executable cmTC_6b1f3]
+  ignore line: [Debian clang version 14.0.0 (git@github.com:llvm/llvm-project.git 210d72e9d6b4a8e7633921d0bd7186fd3c7a2c8c)]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Candidate multilib: 32]
+  ignore line: [@m32]
+  ignore line: [Candidate multilib: x32]
+  ignore line: [@mx32]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  link line: [ "/usr/bin/ld" --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6b1f3 /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/10/crtend.o /usr/lib/x86_64-linux-gnu/crtn.o]
+    arg [/usr/bin/ld] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_6b1f3] ==> ignore
+    arg [/usr/lib/x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib] ==> dir [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [CMakeFiles/cmTC_6b1f3.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtend.o] ==> ignore
+    arg [/usr/lib/x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10] ==> [/usr/lib/gcc/x86_64-linux-gnu/10]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/../lib] ==> [/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib]
+  collapse library dir [/lib] ==> [/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/10;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib;/lib;/usr/lib]
+  implicit fwks: []
+
+
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_TARGET_EQ_X86_64_PC_LINUX_GNU_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_fe681 && [1/2] Building CXX object CMakeFiles/cmTC_fe681.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_fe681
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function fopen exists in the c passed with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_de77d && [1/2] Building C object CMakeFiles/cmTC_de77d.dir/CheckFunctionExists.c.o
+/usr/share/cmake-3.18/Modules/CheckFunctionExists.c:7:3: warning: declaration of built-in function 'fopen' requires inclusion of the header <stdio.h> [-Wbuiltin-requires-header]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS fopen
+                              ^
+1 warning generated.
+[2/2] Linking C executable cmTC_de77d
+
+
+
+Performing C SOURCE FILE Test LIBCXXABI_SUPPORTS_NOSTDLIBXX_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_04126 && [1/2] Building C object CMakeFiles/cmTC_04126.dir/src.c.o
+[2/2] Linking C executable cmTC_04126
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test LIBCXXABI_HAS_COMMENT_LIB_PRAGMA succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_eb770 && [1/2] Building C object CMakeFiles/cmTC_eb770.dir/src.c.o
+[2/2] Linking C executable cmTC_eb770
+
+
+Source file was:
+
+#pragma comment(lib, "c")
+int main() { return 0; }
+
+Performing C++ SOURCE FILE Test LIBCXXABI_HAS_NOSTDINCXX_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_6e618 && [1/2] Building CXX object CMakeFiles/cmTC_6e618.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_6e618
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function dladdr exists in the dl passed with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_efd1e && [1/2] Building C object CMakeFiles/cmTC_efd1e.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_efd1e
+
+
+
+Determining if the function pthread_once exists in the pthread passed with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_25490 && [1/2] Building C object CMakeFiles/cmTC_25490.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_25490
+
+
+
+Determining if the function __cxa_thread_atexit_impl exists in the c passed with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_07398 && [1/2] Building C object CMakeFiles/cmTC_07398.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_07398
+
+
+
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WERROR_EQ_RETURN_TYPE_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_31ff7 && [1/2] Building CXX object CMakeFiles/cmTC_31ff7.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_31ff7
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_W_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_88ba1 && [1/2] Building CXX object CMakeFiles/cmTC_88ba1.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_88ba1
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WALL_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_622e5 && [1/2] Building CXX object CMakeFiles/cmTC_622e5.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_622e5
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WCHAR_SUBSCRIPTS_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_cb804 && [1/2] Building CXX object CMakeFiles/cmTC_cb804.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_cb804
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WCONVERSION_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_4ac7a && [1/2] Building CXX object CMakeFiles/cmTC_4ac7a.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_4ac7a
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WMISMATCHED_TAGS_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_2ffd2 && [1/2] Building CXX object CMakeFiles/cmTC_2ffd2.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_2ffd2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WMISSING_BRACES_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_1774b && [1/2] Building CXX object CMakeFiles/cmTC_1774b.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_1774b
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WNEWLINE_EOF_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_f87bf && [1/2] Building CXX object CMakeFiles/cmTC_f87bf.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_f87bf
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WUNUSED_FUNCTION_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b89f2 && [1/2] Building CXX object CMakeFiles/cmTC_b89f2.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_b89f2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WSHADOW_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_2e9fb && [1/2] Building CXX object CMakeFiles/cmTC_2e9fb.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_2e9fb
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WSHORTEN_64_TO_32_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_6712a && [1/2] Building CXX object CMakeFiles/cmTC_6712a.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_6712a
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WSIGN_COMPARE_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_fcc1d && [1/2] Building CXX object CMakeFiles/cmTC_fcc1d.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_fcc1d
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WSIGN_CONVERSION_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_3e06f && [1/2] Building CXX object CMakeFiles/cmTC_3e06f.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_3e06f
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WSTRICT_ALIASING_EQ_2_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_87d9b && [1/2] Building CXX object CMakeFiles/cmTC_87d9b.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_87d9b
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WSTRICT_OVERFLOW_EQ_4_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_050f5 && [1/2] Building CXX object CMakeFiles/cmTC_050f5.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_050f5
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WUNUSED_PARAMETER_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_47090 && [1/2] Building CXX object CMakeFiles/cmTC_47090.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_47090
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WUNUSED_VARIABLE_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_9afa7 && [1/2] Building CXX object CMakeFiles/cmTC_9afa7.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_9afa7
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WWRITE_STRINGS_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_8a36b && [1/2] Building CXX object CMakeFiles/cmTC_8a36b.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_8a36b
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WUNDEF_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_f1412 && [1/2] Building CXX object CMakeFiles/cmTC_f1412.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_f1412
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WNO_SUGGEST_OVERRIDE_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_fc71c && [1/2] Building CXX object CMakeFiles/cmTC_fc71c.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_fc71c
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WNO_ERROR_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_7efa7 && [1/2] Building CXX object CMakeFiles/cmTC_7efa7.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_7efa7
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_PEDANTIC_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_7a29d && [1/2] Building CXX object CMakeFiles/cmTC_7a29d.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_7a29d
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_FSTRICT_ALIASING_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_bf577 && [1/2] Building CXX object CMakeFiles/cmTC_bf577.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_bf577
+
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test LIBCXXABI_SUPPORTS_FUNWIND_TABLES_FLAG succeeded with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_42c22 && [1/2] Building C object CMakeFiles/cmTC_42c22.dir/src.c.o
+[2/2] Linking C executable cmTC_42c22
+
+
+Source file was:
+int main(void) { return 0; }

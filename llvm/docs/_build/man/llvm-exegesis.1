@@ -1,0 +1,397 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "LLVM-EXEGESIS" "1" "2021-09-18" "13" "LLVM"
+.SH NAME
+llvm-exegesis \- LLVM Machine Instruction Benchmark
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.SH SYNOPSIS
+.sp
+\fBllvm\-exegesis\fP [\fIoptions\fP]
+.SH DESCRIPTION
+.sp
+\fBllvm\-exegesis\fP is a benchmarking tool that uses information available
+in LLVM to measure host machine instruction characteristics like latency,
+throughput, or port decomposition.
+.sp
+Given an LLVM opcode name and a benchmarking mode, \fBllvm\-exegesis\fP
+generates a code snippet that makes execution as serial (resp. as parallel) as
+possible so that we can measure the latency (resp. inverse throughput/uop decomposition)
+of the instruction.
+The code snippet is jitted and executed on the host subtarget. The time taken
+(resp. resource usage) is measured using hardware performance counters. The
+result is printed out as YAML to the standard output.
+.sp
+The main goal of this tool is to automatically (in)validate the LLVM’s TableDef
+scheduling models. To that end, we also provide analysis of the results.
+.sp
+\fBllvm\-exegesis\fP can also benchmark arbitrary user\-provided code
+snippets.
+.SH EXAMPLE 1: BENCHMARKING INSTRUCTIONS
+.sp
+Assume you have an X86\-64 machine. To measure the latency of a single
+instruction, run:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ llvm\-exegesis \-mode=latency \-opcode\-name=ADD64rr
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Measuring the uop decomposition or inverse throughput of an instruction works similarly:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ llvm\-exegesis \-mode=uops \-opcode\-name=ADD64rr
+$ llvm\-exegesis \-mode=inverse_throughput \-opcode\-name=ADD64rr
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+The output is a YAML document (the default is to write to stdout, but you can
+redirect the output to a file using \fI\-benchmarks\-file\fP):
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+\-\-\-
+key:
+  opcode_name:     ADD64rr
+  mode:            latency
+  config:          \(aq\(aq
+cpu_name:        haswell
+llvm_triple:     x86_64\-unknown\-linux\-gnu
+num_repetitions: 10000
+measurements:
+  \- { key: latency, value: 1.0058, debug_string: \(aq\(aq }
+error:           \(aq\(aq
+info:            \(aqexplicit self cycles, selecting one aliasing configuration.
+Snippet:
+ADD64rr R8, R8, R10
+\(aq
+\&...
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+To measure the latency of all instructions for the host architecture, run:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ llvm\-exegesis \-mode=latency \-opcode\-index=\-1
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH EXAMPLE 2: BENCHMARKING A CUSTOM CODE SNIPPET
+.sp
+To measure the latency/uops of a custom piece of code, you can specify the
+\fIsnippets\-file\fP option (\fI\-\fP reads from standard input).
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ echo "vzeroupper" | llvm\-exegesis \-mode=uops \-snippets\-file=\-
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Real\-life code snippets typically depend on registers or memory.
+\fBllvm\-exegesis\fP checks the liveliness of registers (i.e. any register
+use has a corresponding def or is a “live in”). If your code depends on the
+value of some registers, you have two options:
+.INDENT 0.0
+.IP \(bu 2
+Mark the register as requiring a definition. \fBllvm\-exegesis\fP will
+automatically assign a value to the register. This can be done using the
+directive \fILLVM\-EXEGESIS\-DEFREG <reg name> <hex_value>\fP, where \fI<hex_value>\fP
+is a bit pattern used to fill \fI<reg_name>\fP\&. If \fI<hex_value>\fP is smaller than
+the register width, it will be sign\-extended.
+.IP \(bu 2
+Mark the register as a “live in”. \fBllvm\-exegesis\fP will benchmark
+using whatever value was in this registers on entry. This can be done using
+the directive \fILLVM\-EXEGESIS\-LIVEIN <reg name>\fP\&.
+.UNINDENT
+.sp
+For example, the following code snippet depends on the values of XMM1 (which
+will be set by the tool) and the memory buffer passed in RDI (live in).
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+# LLVM\-EXEGESIS\-LIVEIN RDI
+# LLVM\-EXEGESIS\-DEFREG XMM1 42
+vmulps        (%rdi), %xmm1, %xmm2
+vhaddps       %xmm2, %xmm2, %xmm3
+addq $0x10, %rdi
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH EXAMPLE 3: ANALYSIS
+.sp
+Assuming you have a set of benchmarked instructions (either latency or uops) as
+YAML in file \fI/tmp/benchmarks.yaml\fP, you can analyze the results using the
+following command:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+  $ llvm\-exegesis \-mode=analysis \e
+\-benchmarks\-file=/tmp/benchmarks.yaml \e
+\-analysis\-clusters\-output\-file=/tmp/clusters.csv \e
+\-analysis\-inconsistencies\-output\-file=/tmp/inconsistencies.html
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+This will group the instructions into clusters with the same performance
+characteristics. The clusters will be written out to \fI/tmp/clusters.csv\fP in the
+following format:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+cluster_id,opcode_name,config,sched_class
+\&...
+2,ADD32ri8_DB,,WriteALU,1.00
+2,ADD32ri_DB,,WriteALU,1.01
+2,ADD32rr,,WriteALU,1.01
+2,ADD32rr_DB,,WriteALU,1.00
+2,ADD32rr_REV,,WriteALU,1.00
+2,ADD64i32,,WriteALU,1.01
+2,ADD64ri32,,WriteALU,1.01
+2,MOVSX64rr32,,BSWAP32r_BSWAP64r_MOVSX64rr32,1.00
+2,VPADDQYrr,,VPADDBYrr_VPADDDYrr_VPADDQYrr_VPADDWYrr_VPSUBBYrr_VPSUBDYrr_VPSUBQYrr_VPSUBWYrr,1.02
+2,VPSUBQYrr,,VPADDBYrr_VPADDDYrr_VPADDQYrr_VPADDWYrr_VPSUBBYrr_VPSUBDYrr_VPSUBQYrr_VPSUBWYrr,1.01
+2,ADD64ri8,,WriteALU,1.00
+2,SETBr,,WriteSETCC,1.01
+\&...
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+\fBllvm\-exegesis\fP will also analyze the clusters to point out
+inconsistencies in the scheduling information. The output is an html file. For
+example, \fI/tmp/inconsistencies.html\fP will contain messages like the following :
+[image]
+.sp
+Note that the scheduling class names will be resolved only when
+\fBllvm\-exegesis\fP is compiled in debug mode, else only the class id will
+be shown. This does not invalidate any of the analysis results though.
+.SH OPTIONS
+.INDENT 0.0
+.TP
+.B \-help
+Print a summary of command line options.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-opcode\-index=<LLVM opcode index>
+Specify the opcode to measure, by index. Specifying \fI\-1\fP will result
+in measuring every existing opcode. See example 1 for details.
+Either \fIopcode\-index\fP, \fIopcode\-name\fP or \fIsnippets\-file\fP must be set.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-opcode\-name=<opcode name 1>,<opcode name 2>,...
+Specify the opcode to measure, by name. Several opcodes can be specified as
+a comma\-separated list. See example 1 for details.
+Either \fIopcode\-index\fP, \fIopcode\-name\fP or \fIsnippets\-file\fP must be set.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-snippets\-file=<filename>
+Specify the custom code snippet to measure. See example 2 for details.
+Either \fIopcode\-index\fP, \fIopcode\-name\fP or \fIsnippets\-file\fP must be set.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-mode=[latency|uops|inverse_throughput|analysis]
+Specify the run mode. Note that some modes have additional requirements and options.
+.sp
+\fIlatency\fP mode can be  make use of either RDTSC or LBR.
+\fIlatency[LBR]\fP is only available on X86 (at least \fISkylake\fP).
+To run in \fIlatency\fP mode, a positive value must be specified
+for \fIx86\-lbr\-sample\-period\fP and \fI–repetition\-mode=loop\fP\&.
+.sp
+In \fIanalysis\fP mode, you also need to specify at least one of the
+\fI\-analysis\-clusters\-output\-file=\fP and \fI\-analysis\-inconsistencies\-output\-file=\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-x86\-lbr\-sample\-period=<nBranches/sample>
+Specify the LBR sampling period \- how many branches before we take a sample.
+When a positive value is specified for this option and when the mode is \fIlatency\fP,
+we will use LBRs for measuring.
+On choosing the “right” sampling period, a small value is preferred, but throttling
+could occur if the sampling is too frequent. A prime number should be used to
+avoid consistently skipping certain blocks.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-repetition\-mode=[duplicate|loop|min]
+Specify the repetition mode. \fIduplicate\fP will create a large, straight line
+basic block with \fInum\-repetitions\fP instructions (repeating the snippet
+\fInum\-repetitions\fP/\fIsnippet size\fP times). \fIloop\fP will, optionally, duplicate the
+snippet until the loop body contains at least \fIloop\-body\-size\fP instructions,
+and then wrap the result in a loop which will execute \fInum\-repetitions\fP
+instructions (thus, again, repeating the snippet
+\fInum\-repetitions\fP/\fIsnippet size\fP times). The \fIloop\fP mode, especially with loop
+unrolling tends to better hide the effects of the CPU frontend on architectures
+that cache decoded instructions, but consumes a register for counting
+iterations. If performing an analysis over many opcodes, it may be best to
+instead use the \fImin\fP mode, which will run each other mode,
+and produce the minimal measured result.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-num\-repetitions=<Number of repetitions>
+Specify the target number of executed instructions. Note that the actual
+repetition count of the snippet will be \fInum\-repetitions\fP/\fIsnippet size\fP\&.
+Higher values lead to more accurate measurements but lengthen the benchmark.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-loop\-body\-size=<Preferred loop body size>
+Only effective for \fI\-repetition\-mode=[loop|min]\fP\&.
+Instead of looping over the snippet directly, first duplicate it so that the
+loop body contains at least this many instructions. This potentially results
+in loop body being cached in the CPU Op Cache / Loop Cache, which allows to
+which may have higher throughput than the CPU decoders.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-max\-configs\-per\-opcode=<value>
+Specify the maximum configurations that can be generated for each opcode.
+By default this is \fI1\fP, meaning that we assume that a single measurement is
+enough to characterize an opcode. This might not be true of all instructions:
+for example, the performance characteristics of the LEA instruction on X86
+depends on the value of assigned registers and immediates. Setting a value of
+\fI\-max\-configs\-per\-opcode\fP larger than \fI1\fP allows \fIllvm\-exegesis\fP to explore
+more configurations to discover if some register or immediate assignments
+lead to different performance characteristics.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-benchmarks\-file=</path/to/file>
+File to read (\fIanalysis\fP mode) or write (\fIlatency\fP/\fIuops\fP/\fIinverse_throughput\fP
+modes) benchmark results. “\-” uses stdin/stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-analysis\-clusters\-output\-file=</path/to/file>
+If provided, write the analysis clusters as CSV to this file. “\-” prints to
+stdout. By default, this analysis is not run.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-analysis\-inconsistencies\-output\-file=</path/to/file>
+If non\-empty, write inconsistencies found during analysis to this file. \fI\-\fP
+prints to stdout. By default, this analysis is not run.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-analysis\-clustering=[dbscan,naive]
+Specify the clustering algorithm to use. By default DBSCAN will be used.
+Naive clustering algorithm is better for doing further work on the
+\fI\-analysis\-inconsistencies\-output\-file=\fP output, it will create one cluster
+per opcode, and check that the cluster is stable (all points are neighbours).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-analysis\-numpoints=<dbscan numPoints parameter>
+Specify the numPoints parameters to be used for DBSCAN clustering
+(\fIanalysis\fP mode, DBSCAN only).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-analysis\-clustering\-epsilon=<dbscan epsilon parameter>
+Specify the epsilon parameter used for clustering of benchmark points
+(\fIanalysis\fP mode).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-analysis\-inconsistency\-epsilon=<epsilon>
+Specify the epsilon parameter used for detection of when the cluster
+is different from the LLVM schedule profile values (\fIanalysis\fP mode).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-analysis\-display\-unstable\-clusters
+If there is more than one benchmark for an opcode, said benchmarks may end up
+not being clustered into the same cluster if the measured performance
+characteristics are different. by default all such opcodes are filtered out.
+This flag will instead show only such unstable opcodes.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-ignore\-invalid\-sched\-class=false
+If set, ignore instructions that do not have a sched class (class idx = 0).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-mcpu=<cpu name>
+If set, measure the cpu characteristics using the counters for this CPU. This
+is useful when creating new sched models (the host CPU is unknown to LLVM).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-dump\-object\-to\-disk=true
+By default, llvm\-exegesis will dump the generated code to a temporary file to
+enable code inspection. You may disable it to speed up the execution and save
+disk space.
+.UNINDENT
+.SH EXIT STATUS
+.sp
+\fBllvm\-exegesis\fP returns 0 on success. Otherwise, an error message is
+printed to standard error, and the tool returns a non 0 value.
+.SH AUTHOR
+Maintained by the LLVM Team (https://llvm.org/).
+.SH COPYRIGHT
+2003-2021, LLVM Project
+.\" Generated by docutils manpage writer.
+.

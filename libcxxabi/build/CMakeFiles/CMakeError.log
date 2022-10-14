@@ -1,0 +1,36 @@
+Determining if the function write exists in the System failed with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_f386c && [1/2] Building C object CMakeFiles/cmTC_f386c.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_f386c
+FAILED: cmTC_f386c 
+: && /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/clang -g -O2 -fdebug-prefix-map=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project=. -fstack-protector-strong -Wformat -Werror=format-security --target=x86_64-pc-linux-gnu -DCHECK_FUNCTION_EXISTS=write  -nostdlib++  CMakeFiles/cmTC_f386c.dir/CheckFunctionExists.c.o -o cmTC_f386c  -lSystem  -lc  /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/lib/clang/14.0.0/lib/linux/libclang_rt.builtins-x86_64.a && :
+/usr/bin/ld: cannot find -lSystem
+clang-14: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_WX_FLAG failed with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b6a54 && [1/2] Building CXX object CMakeFiles/cmTC_b6a54.dir/src.cxx.o
+warning: unknown warning option '-WX-' [-Wunknown-warning-option]
+1 warning generated.
+[2/2] Linking CXX executable cmTC_b6a54
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test LIBCXXABI_SUPPORTS_EHSC_FLAG failed with the following output:
+Change Dir: /home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/libcxxabi/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_19ec7 && [1/2] Building CXX object CMakeFiles/cmTC_19ec7.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_19ec7.dir/src.cxx.o 
+/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project/build-llvm/tools/clang/stage2-bins/bin/clang++   -g -O2 -fdebug-prefix-map=/home/sylvestre/dev/debian/pkg-llvm/llvm-toolchain/branches/llvm-project=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 --target=x86_64-pc-linux-gnu -DLIBCXXABI_SUPPORTS_EHSC_FLAG  -nostdlib++ -fPIE   -EHsc -MD -MT CMakeFiles/cmTC_19ec7.dir/src.cxx.o -MF CMakeFiles/cmTC_19ec7.dir/src.cxx.o.d -o CMakeFiles/cmTC_19ec7.dir/src.cxx.o -c src.cxx
+clang-14: error: unknown argument: '-EHsc'
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main() { return 0; }
